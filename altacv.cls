@@ -130,7 +130,10 @@
 \RequirePackage{changepage}
 
 \setlength{\parindent}{0pt}
-\newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
+\newcommand{\divider}{
+\vspace{-0.2cm}
+\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip
+}
 
 \newenvironment{fullwidth}{%
   \begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
@@ -217,13 +220,6 @@
 \NewInfoField{mailaddress}{\faEnvelope}
 \NewInfoField{phone}{\faPhone}[tel:]
 \NewInfoField{homepage}{\faGlobe}[https://]
-\NewInfoField{twitter}{\faTwitter}[https://twitter.com/]
-% v1.7.2 twitter.com is now X.com; v1.7.3 but only use the new icon if it's been defined
-\ifcsdef{simpleicon@xicon}
- {\NewInfoField{xtwitter}{\raisebox{-0.2ex}{\scalebox{0.95}{\simpleicon{x}}}\,}[https://x.com/]}
- {\let\xtwitter\twitter%
-  \pretocmd{\xtwitter}{\ClassWarning{altacv}{You tried to use \string\xtwitter, but the new X icon isn't available. Please ensure you have updated the `simpleicons' package. Falling back to \string\twitter\space icon for now}}{}{}%
- }
 \NewInfoField{linkedin}{\faLinkedin}[https://linkedin.com/in/]
 \NewInfoField{github}{\faGithub}[https://github.com/]
 % v1.7.3 Backward compatibility for ORCiD icon
@@ -335,6 +331,39 @@
     }}\par
   \medskip\normalsize
 }
+\newcommand{\cvsmallevent}[4]{%
+  {\large\color{emphasis}#1\par}
+  \smallskip\normalsize
+  \ifstrequal{#2}{}{}{
+  \textbf{\color{accent}#2}\par
+  \smallskip}
+  \ifstrequal{#3}{}{}{%
+    {\small\makebox[0.5\linewidth][l]%
+      {\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
+      ~#3}%
+    }}\par\smallskip%
+  \ifstrequal{#4}{}{}{%
+    {\small\makebox[0.5\linewidth][l]%
+      {\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
+        ~#4}%
+    }}\par
+  \medskip\normalsize
+}
+
+% v1.1.4: fixes inconsistent font size
+% v1.7: adds accsupp ActualText for location and date markers
+\newcommand{\cvlightevent}[3]{%
+  {\large\color{emphasis}#1\par}
+  \smallskip\normalsize
+  \ifstrequal{#2}{}{}{
+  \textbf{\color{accent}#2}\par}
+  \ifstrequal{#3}{}{}{%
+    {\small\makebox[0.5\linewidth][l]%
+      {\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
+      ~#3}%
+    }}\par%
+  \medskip\normalsize
+}
 
 % v1.7: adds accsupp for the icon as well
 \newcommand{\cvachievement}[3]{%
@@ -349,17 +378,32 @@
   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
 
+\newcommand{\tech}[1]{\textcolor{tech}{\textit{#1}}}
+
 % v1.6: Use accsupp so that the actual numeric value is copied/pasted
 %       and also support 0.5, 1.5, 2.5, 3.5, 4.5
-\newcommand{\cvskill}[2]{%
-  \textcolor{emphasis}{\textbf{#1}}\hfill
-  \BeginAccSupp{method=plain,ActualText={#2}}
-  \foreach \x in {1,...,5}{%
-    \ifdimequal{\x pt - #2 pt}{0.5pt}%
-    {\clipbox*{0pt -0.25ex {.5\width} {\totalheight}}{\color{accent}\cvRatingMarker}%
-     \clipbox*{{.5\width} -0.25ex {\width} {\totalheight}}{\color{body!30}\cvRatingMarker}}
-    {\ifdimgreater{\x bp}{#2 bp}{\color{body!30}}{\color{accent}}\cvRatingMarker}%
-  }\EndAccSupp{}\par%
+\newcommand{\cvskill}[3]{%
+\begin{minipage}{0.2\columnwidth}
+  $\vcenter{\includegraphics[width=0.75cm]{#2}}$
+\end{minipage}
+\hfill
+\begin{minipage}{0.8\columnwidth}
+  $\vcenter{
+    \textcolor{emphasis}{\textbf{#1}}\hfill
+    \textcolor{emphasis}{#3}
+  }$
+\end{minipage}
+
+  % \includegraphics[width=0.75cm]{#2}
+  % \textcolor{emphasis}{\textbf{#1}}\hfill
+  % \textcolor{emphasis}{#3}
+  % \BeginAccSupp{method=plain,ActualText={#2}}
+  % \foreach \x in {1,...,5}{%
+  %   \ifdimequal{\x pt - #2 pt}{0.5pt}%
+  %   {\clipbox*{0pt -0.25ex {.5\width} {\totalheight}}{\color{accent}\cvRatingMarker}%
+  %    \clipbox*{{.5\width} -0.25ex {\width} {\totalheight}}{\color{body!30}\cvRatingMarker}}
+  %   {\ifdimgreater{\x bp}{#2 bp}{\color{body!30}}{\color{accent}}\cvRatingMarker}%
+  % }\EndAccSupp{}\par%
 }
 
 % Adapted from @Jake's answer at http://tex.stackexchange.com/a/82729/226

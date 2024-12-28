@@ -1,0 +1,486 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7.2, 28 August 2024) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and simpleicons packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
+\iftutex 
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelBlue}{HTML}{082645}  %450808
+\definecolor{PastelBlue}{HTML}{0D4C8F} %8F0D0D
+\definecolor{LightBlue}{HTML}{6195CD} %8F0D0D
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelBlue}
+\colorlet{heading}{DarkPastelBlue}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelBlue}
+\colorlet{tech}{LightBlue}
+\colorlet{accent}{PastelBlue}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% % When using APA6 if you need more author names to be listed
+% % because you're e.g. the 12th author, add apamaxprtauth=12
+% \usepackage[backend=biber,style=apa6,sorting=ydnt]{biblatex}
+% \defbibheading{pubtype}{\cvsubsection{#1}}
+% \renewcommand{\bibsetup}{\vspace*{-\baselineskip}}
+% \AtEveryBibitem{%
+%   \makebox[\bibhang][l]{\itemmarker}%
+%   \iffieldundef{doi}{}{\clearfield{url}}%
+% }
+% \setlength{\bibitemsep}{0.25\baselineskip}
+% \setlength{\bibhang}{1.25em}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\usepackage[backend=biber,style=numeric,sorting=ydnt,defernumbers=true]{biblatex}
+%% For removing numbering entirely when using a numeric style
+\setlength{\bibhang}{1.25em}
+% \DeclareFieldFormat{labelnumberwidth}{\makebox[\bibhang][l]{\itemmarker}}
+\setlength{\biblabelsep}{0pt}
+\defbibheading{pubtype}{\cvsubsection{#1}}
+\renewcommand{\bibsetup}{\vspace*{-\baselineskip}}
+\AtEveryBibitem{%
+  \makebox[\bibhang][l]{~}%
+  \iffieldundef{doi}{}{\clearfield{url}}%
+}
+
+
+%% publications.bib contains your publications
+\addbibresource{publications.bib}
+% \usepackage{academicons}\let\faOrcid\aiOrcid
+\begin{document}
+
+
+\name{Vincent Lambert}
+\tagline{Ingénieur et doctorant en informatique}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{photo_cv}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{vincent.lambert29@gmail.com}
+  \location{14 rue des déportés du 11 novembre 1943, 38100 Grenoble, France}
+  % \phone{+336 47 54 36 73}
+  \homepage{vincent-lambert.gitlab.io/website/}
+  \github{Vincent-LAMBERT}
+  \orcid{0009-0002-7983-0949}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Formation}
+
+\cvevent{Doctorat en Interaction Humain-Machine}{Équipe IIHM du Laboratoire d'Informatique de Grenoble}{Septembre 2022 -- Actuel}{Saint Martin d'Hères, France}
+
+Sujet de thèse: « Découvrabilité et représentation des interactions par microgestes de la main ». Publications: \cite{lambert_simultaneous_2024}, \cite{lambert_visual_2023}, \cite{lambert_doctoral_consortium}.
+
+\begin{itemize}
+\item Extensions \tech{Inkscape} et logiciels d'expérience en \tech{Python} (Inkex, Mediapipe, OpenCv), application de smartwatch (\tech{Kotlin} avec \tech{Android Studio}), site statique (\tech{HTML/CSS/JavaScript}) et dynamique (\tech{NodeJs/Express})
+\end{itemize}
+
+\divider
+
+\cvevent{Diplôme d’ingénieur ENSIMAG}{Grenoble INP - Ensimag}{Septembre 2019 -- Juillet 2022}{Saint Martin d'Hères, France}
+
+Formation d’ingénieur en Informatique et Mathématiques appliquées avec une
+spécialisation en Ingénierie des Systèmes d’Information.
+\begin{itemize}
+\item Principaux projets en \tech{Java}, \tech{C}, \tech{SQL} et \tech{HTML/CSS/JavaScript}
+\item Petits projets en \tech{Python}, \tech{Rust}, \tech{VHDL}
+\end{itemize}
+
+\divider
+
+\cvevent{CPGE PCSI-PSI}{Lycée Paul Cézanne}{Septembre 2017 -- Juillet 2019}{Aix-en-Provence, France}
+
+Préparation intensive aux concours d’entrée en école d’ingenieur.
+
+\divider
+
+\cvevent{Baccalauréat S mention Très Bien}{Externat Saint Joseph}{Septembre 2017}{Ollioules, France}
+
+Diplôme obtenu au sein de la section SI, option Latin.
+
+\medskip
+
+\cvsection{Parcours professionnel}
+
+\cvevent{Projet de fin d’études (stage de 6 mois)}{Université Grenoble Alpes}{21 Février 2022 -- 22 Juillet 2022}{Saint Martin d'Hères, France}
+Sujet de stage: «Discoverability des micro-gestes en Réalité Augmentée». Publication \cite{lambert_visual_2023} écrite pendant la thèse sur les expériences menées lors de ce stage.
+\begin{itemize}
+  \item Images 2D (\tech{Gimp}, \tech{Inkscape}), modélisation 3D (\tech{Blender}), application en Réalité Augmentée (\tech{Unity}), site statique (\tech{HTML}, \tech{CSS}, \tech{JavaScript})
+\end{itemize}
+
+\divider
+
+\cvevent{Stage Assistant Ingénieur (2-3 mois)}{Metrologic Group}{25 Mai 2021 -- 06 Août 2021}{Meylan, France}
+Sujet de stage: «Portabilité Windows-Linux». Conversion automatique des solutions \tech{Visual Studio} en projets \tech{CMake} (fait en \tech{Python}).
+
+% \cvsection{A Day of My Life}
+
+% % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% % \wheelchart{outer radius}{inner radius}{
+% % comma-separated list of value/text width/color/detail}
+% \wheelchart{1.5cm}{0.5cm}{%
+%   6/8em/accent!30/{Sleep,\\beautiful sleep},
+%   3/8em/accent!40/Hopeful novelist by night,
+%   8/8em/accent!60/Daytime job,
+%   2/10em/accent/Sports and relaxation,
+%   5/6em/accent!20/Spending time with family
+% }
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+
+\medskip
+
+\cvsection{Enseignement}
+
+\cvevent{R212 Intégration}{IUT 1 Grenoble - L1}{A venir}{}
+Suivi de TP et d'examen (20 heqTD).
+
+\divider
+
+\cvevent{R111 Intégration}{IUT 1 Grenoble - L1}{08 Octobre 2024 -- 03 Décembre 2024}{}
+Suivi de TP et d'examen (22 heqTD).
+
+\divider
+
+\cvevent{Interaction multimodale et sur supports mobiles}{Polytech Grenoble - M2}{13 Septembre 2022 -- 15 Novembre 2022}{}
+Cours, suivi de projet et soutenances (41 heqTD).
+
+\divider
+
+\cvevent{Cours Experience Utilisateur (UX)}{Université Grenoble Alpes - M2}{28 Septembre 2022 -- 07 Décembre 2022}{}
+Suivi de projet (16,5 heqTD).
+
+\divider
+
+\cvevent{Interaction multimodale et sur supports mobiles}{Polytech Grenoble - M2}{14 Septembre 2022 -- 16 Novembre 2022}{}
+Suivi de projet et soutenances (31 heqTD).
+
+\divider
+
+\cvevent{Cours Experience Utilisateur (UX)}{Université Grenoble Alpes - M2}{28 Septembre 2022 -- 07 Décembre 2022}{}
+Suivi de projet (16,5 heqTD) et examen de 1h (rédaction de sujet et correction).
+
+\medskip
+
+\cvsection{Publications}
+
+%% Specify your last name(s) and first name(s) as given in the .bib to automatically bold your own name in the publications list.
+%% One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly; or write \bibnamedelimi if you use initials in the .bib
+%% You can specify multiple names, especially if you have changed your name or if you need to highlight multiple authors.
+\mynames{Lim/Lian\bibnamedelima Tze,
+  Wong/Lian\bibnamedelima Tze,
+  Lim/Tracy,
+  Lim/L.\bibnamedelimi T.}
+%% MAKE SURE THERE IS NO SPACE AFTER THE FINAL NAME IN YOUR \mynames LIST
+
+\nocite{*}
+
+\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+
+\divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faFile[regular]}{ Articles de Journal}},type=article]
+
+\divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{ Conference Proceedings}},type=inproceedings]
+
+\medskip
+
+\cvsection{Projets personnels majeurs}
+
+\cvevent{Créateur des règles, de l'univers et des outils}{Jeu de rôle papier}{Août 2015 -- en cours}{}
+Création d’un jeu de rôle papier avec système de règles, lore, bêta-tests et quêtes. Création d’une langue avec
+grammaire, vocabulaire, système d’écriture et donc fonte pour les fichiers numériques associés. Réalisation d’une
+interface graphique avec JavaFx pour l’exploration du jeu, une modification aisée de ses variables et pour la
+création assistée d’un personnage.
+
+\divider
+
+\cvevent{Game designer, scénariste et aspects techniques}{Modification de jeux existants (hack-rom)}{Janvier 2014 -- Août 2017}{}
+Création de multiples hack-roms (jeux modifiés) basés sur l’univers de Pokémon.
+
+\medskip
+
+\cvsection{Autres intérêts}
+
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+\wheelchart{1.5cm}{0.5cm}{%
+  6/8em/accent!30/Jeu de rôle,
+  3/8em/accent!40/Handball,
+  8/8em/accent!60/{Jeu-vidéo,\\e-sport},
+  2/10em/accent/Cuisine vegan,
+  5/6em/accent!20/Manga
+}
+
+\medskip
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+% \cvsection{My Life Philosophy}
+
+% \begin{quote}
+% ``Something smart or heartfelt, preferably in one sentence.''
+% \end{quote}
+
+\cvsection{Fiertés}
+
+\cvachievement{\faTrophy}{Mon Jeu de Rôle}{10 ans de travail pour créer un univers complet et un système de jeu original}
+
+\divider
+
+\cvachievement{\faHeartbeat}{Mes engagements associatifs}{3 associations pendant le covid}
+
+\divider
+
+\cvachievement{\faHeartbeat}{Ma thèse}{manuscrit en cours d'écriture...}
+
+% \cvsection{En quelques mots}
+
+% % Don't overuse these \cvtag boxes — they're just eye-candies and not essential. If something doesn't fit on a single line, it probably works better as part of an itemized list (probably inlined itemized list), or just as a comma-separated list of strengths.
+
+% % The `ragged2e` document class option might cause automatic linebreaks between \cvtag to fail.
+% % Either remove the ragged2e option; or 
+% % add \LaTeXraggedright in the paragraph for these \cvtag
+% {\LaTeXraggedright
+% \cvtag{Créatif}
+% \cvtag{Polyvalent}
+% \cvtag{Moteur}
+% \par}
+
+% \medskip
+
+% Et niveau perso...
+% \smallskip
+
+% {\LaTeXraggedright
+% \cvtag{Jeux-vidéo}
+% \cvtag{E-sport}
+% \cvtag{Jeu de rôle}
+% \cvtag{Manga}
+% \par}
+
+\cvsection{Langues}
+
+\cvskill{Français}{français.png}{Langue maternelle}
+\smallskip
+\divider
+
+\cvskill{Anglais}{anglais.png}{C1 (TOEIC) et B2 (First)}
+\smallskip
+\divider
+
+\cvskill{Espagnol}{espagnol.png}{B2 (d’après le CECR)}
+\smallskip
+\divider
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\medskip
+
+\cvsection{Associations}
+
+\cvlightevent{Association des Faluchards Grenoblois}{Président}{Septembre 2021 -- Septembre 2022}{}
+Gestion d’évènements étudiants (soirées trimestrielles et weekend spécial annuel a \textasciitilde150 personnes), de
+commandes groupées et de partenariats locaux.
+
+\divider
+
+\cvlightevent{Pôle Communication de l’Ensimag}{Président}{Avril 2020 -- Mai 2021}{}
+
+Écriture pour le journal d’école mensuel et prise de photographies/vidéos.
+
+\divider
+
+\cvlightevent{Bureau des Arts (BDA) de l’Ensimag}{Vice-trésorier}{Avril 2020 -- Mai 2021}{}
+
+Budgets prévisionnel de l’année (Solde de trésorerie \textasciitilde4500€). Organisation de deux soirées Quiz en distanciel (\textasciitilde60
+personnes sur Discord pendant 4h).
+
+\divider
+
+\cvlightevent{Ensimagaming}{Reponsable communication}{Mai 2020 -- Décembre 2020}{}
+
+Gestion en binôme de la communication. Mise en place de la chaine Twitch de l’association. Organisation et
+commentaire de tournoi Rocket League.
+
+\divider
+
+\cvlightevent{Puls’Art – Liste BDA Ensimag 2020}{Vice-trésorier}{Octobre 2019 -- Avril 2020}{}
+
+Budgets prévisionnel de la semaine d’évènements culturels (Total \textasciitilde8000€).
+
+\medskip
+
+\cvsection{Encadrement}
+
+\cvsmallevent{Jad	Berjawi (M1)}{}{12 Février 2024  --	 23 Août 2024}{}
+Sujet de stage: « Develop a Unity AR plugin for hand microgestures ».
+
+\divider
+
+\cvsmallevent{Raphaël Demoulin (L3)}{}{30 Mai 2023  -- 28 Juillet 2023}{}
+Sujet de stage: « Programmation d'une API pour la représentation de
+microgestes de la main ».
+
+\medskip
+
+\cvsection{Autres expériences}
+
+\cvsmallevent{}{Séminaire LOKI}{3 juin 2024 -- 5 juin 2024}{Lille, France et Hastière, Belgique}
+3 jours de présentations et discussions sur les travaux de recherche de l'équipe LOKI.
+
+\divider
+
+\cvsmallevent{}{PHD LIG Madness}{21 Mai 2024}{Saint Martin d'Hères, France}
+Présentation de ma thèse en 2 minutes. Récompensé avec 2 autres doctorants.
+
+\divider
+
+\cvsmallevent{}{eNSEMBLE Autumn School}{05 Octobre 2023 -- 07 Octobre 2023}{Saint Martin d'Hères, France}
+Trois jours de formations en Interaction Humain-Machine avec des pairs venant d’universités françaises (\textasciitilde20h).
+
+\divider
+
+\cvsmallevent{}{Etudiant volontaire IHM 2023}{04 Avril 2023 –- 08 Avril 2023}{Troyes, France}
+Gestion technique du comité de programme (\textasciitilde7h).
+Gestion du micro, logistique à l’UTT et logistique du gala (\textasciitilde15h).
+
+
+\newpage
+
+\cvsmallevent{}{Formation SAFE}{24 Février 2022}{En ligne}
+Formation au soutien face aux agressions sexistes et sexuelles (VSS). Vidéos, discussions et questionnaire incluant des aspects statistiques, sociologiques, psychologiques et juridiques (\textasciitilde5h au total). Sensibilisation à l'accompagnement des victimes et auteur·rice·s de VSS.
+
+
+\divider
+
+\cvsmallevent{}{AFIRM CHI Summer School}{22 Août 2022 –- 26 Août 2022}{Padoue, Italie}
+Formations à l’Interaction Humain-Machine avec des pairs (\textasciitilde25h).
+
+
+% \divider
+
+% \cvsection{Referees}
+
+% % \cvref{name}{email}{mailing address}
+% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+% {Address Line 1\\Address line 2}
+
+% \divider
+
+% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+% {Address Line 1\\Address line 2}
+
+
+\end{paracol}
+
+
+\end{document}
