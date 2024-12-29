@@ -379,21 +379,22 @@
 }
 
 \newcommand{\tech}[1]{\textcolor{tech}{\textit{#1}}}
+\newcommand{\cvfr}[1]{\tagged{french}{#1}}
+\newcommand{\cven}[1]{\tagged{english}{#1}}
 
 % v1.6: Use accsupp so that the actual numeric value is copied/pasted
 %       and also support 0.5, 1.5, 2.5, 3.5, 4.5
 \newcommand{\cvskill}[3]{%
-\begin{minipage}{0.2\columnwidth}
+\begin{minipage}{0.15\columnwidth}
   $\vcenter{\includegraphics[width=0.75cm]{#2}}$
 \end{minipage}
 \hfill
-\begin{minipage}{0.8\columnwidth}
+\begin{minipage}{0.85\columnwidth}
   $\vcenter{
     \textcolor{emphasis}{\textbf{#1}}\hfill
     \textcolor{emphasis}{#3}
   }$
 \end{minipage}
-
   % \includegraphics[width=0.75cm]{#2}
   % \textcolor{emphasis}{\textbf{#1}}\hfill
   % \textcolor{emphasis}{#3}

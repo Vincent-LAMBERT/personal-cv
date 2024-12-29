@@ -15,6 +15,8 @@
 % \documentclass[10pt,a4paper,normalphoto]{altacv}
 
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+\usepackage[english]{tagging} 
+
 %% AltaCV uses the fontawesome5 and simpleicons packages.
 %% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
 
@@ -122,7 +124,9 @@
 
 
 \name{Vincent Lambert}
-\tagline{Ingénieur et doctorant en informatique}
+\tagline{\cvfr{Ingénieur et doctorant en informatique}\cven{Engineer and PhD student in computer science}}
+
+
 %% You can add multiple photos on the left or right
 \photoR{2.8cm}{photo_cv}
 % \photoL{2.5cm}{Yacht_High,Suitcase_High}
@@ -166,53 +170,80 @@
 % Start a 2-column paracol. Both the left and right columns will automatically
 % break across pages if things get too long.
 \begin{paracol}{2}
-\cvsection{Formation}
+\cvfr{\cvsection{Formation}}\cven{\cvsection{Education}}
 
-\cvevent{Doctorat en Interaction Humain-Machine}{Équipe IIHM du Laboratoire d'Informatique de Grenoble}{Septembre 2022 -- Actuel}{Saint Martin d'Hères, France}
+\cvfr{\cvevent{Doctorat en Interaction Humain-Machine}{Équipe IIHM du Laboratoire d'Informatique de Grenoble}{Sept 2022 -- Actuel}{Saint Martin d'Hères, France}}
+\cven{\cvevent{PhD on Human-Computer Interaction}{IIHM team of the LIG (Grenoble Computer Science Laboratory)}{Sept 2022 -- Current}{Saint Martin d'Hères, France}}
 
-Sujet de thèse: « Découvrabilité et représentation des interactions par microgestes de la main ». Publications: \cite{lambert_simultaneous_2024}, \cite{lambert_visual_2023}, \cite{lambert_doctoral_consortium}.
+\cvfr{Sujet de thèse: « Découvrabilité et représentation des interactions par microgestes de la main ». Publications: \cite{lambert_simultaneous_2024}, \cite{lambert_visual_2023}, \cite{lambert_doctoral_consortium}.
 
 \begin{itemize}
 \item Extensions \tech{Inkscape} et logiciels d'expérience en \tech{Python} (Inkex, Mediapipe, OpenCv), application de smartwatch (\tech{Kotlin} avec \tech{Android Studio}), site statique (\tech{HTML/CSS/JavaScript}) et dynamique (\tech{NodeJs/Express})
-\end{itemize}
+\end{itemize}}
+
+\cven{Thesis topic: "Discoverability and representation of interactions by hand micro-gestures". Publications: \cite{lambert_simultaneous_2024}, \cite{lambert_visual_2023}, \cite{lambert_doctoral_consortium}.
+
+\begin{itemize}
+\item \tech{Inkscape} plugins et experiment softwares made with \tech{Python} (Inkex, Mediapipe, OpenCv), smartwatch application (\tech{Kotlin} with \tech{Android Studio}), static (\tech{HTML/CSS/JavaScript}) and dynamic website (\tech{NodeJs/Express})
+\end{itemize}}
 
 \divider
 
-\cvevent{Diplôme d’ingénieur ENSIMAG}{Grenoble INP - Ensimag}{Septembre 2019 -- Juillet 2022}{Saint Martin d'Hères, France}
+\cvfr{\cvevent{Diplôme d’ingénieur ENSIMAG}{Grenoble INP - Ensimag}{Sept 2019 -- Juil 2022}{Saint Martin d'Hères, France}}
+\cven{\cvevent{ENSIMAG engineering diploma}{Grenoble INP - Ensimag}{Sept 2019 -- July 2022}{Saint Martin d'Hères, France}}
 
-Formation d’ingénieur en Informatique et Mathématiques appliquées avec une
+\cvfr{Formation d’ingénieur en Informatique et Mathématiques appliquées avec une
 spécialisation en Ingénierie des Systèmes d’Information.
 \begin{itemize}
 \item Principaux projets en \tech{Java}, \tech{C}, \tech{SQL} et \tech{HTML/CSS/JavaScript}
 \item Petits projets en \tech{Python}, \tech{Rust}, \tech{VHDL}
-\end{itemize}
+\end{itemize}}
+\cven{Engineering degree in Computer Science and Applied Mathematics with a
+specialization in Information Systems Engineering.
+\begin{itemize}
+\item Main projets in \tech{Java}, \tech{C}, \tech{SQL} and \tech{HTML/CSS/JavaScript}
+\item Small projets in \tech{Python}, \tech{Rust}, \tech{VHDL}
+\end{itemize}}
 
 \divider
 
-\cvevent{CPGE PCSI-PSI}{Lycée Paul Cézanne}{Septembre 2017 -- Juillet 2019}{Aix-en-Provence, France}
+\cvfr{\cvevent{CPGE PCSI-PSI}{Lycée Paul Cézanne}{Septembre 2017 -- Juillet 2019}{Aix-en-Provence, France}}
+\cven{\cvevent{CPGE PCSI-PSI}{Lycée Paul Cézanne}{Sept 2017 -- July 2019}{Aix-en-Provence, France}}
 
-Préparation intensive aux concours d’entrée en école d’ingenieur.
+\cvfr{Préparation intensive aux concours d’entrée en école d’ingenieur.}
+\cven{Intensive preparation for engineering school entrance exams.}
 
 \divider
 
-\cvevent{Baccalauréat S mention Très Bien}{Externat Saint Joseph}{Septembre 2017}{Ollioules, France}
+\cvfr{\cvevent{Baccalauréat S mention Très Bien}{Externat Saint Joseph}{Septembre 2017}{Ollioules, France}}
+\cven{\cvevent{Baccalauréat S with honors}{Externat Saint Joseph}{Sept 2017}{Ollioules, France}}
 
-Diplôme obtenu au sein de la section SI, option Latin.
+\cvfr{Diplôme obtenu au sein de la section SI, option Latin.}
+\cven{Diploma earned in the SI section with the Latin option.}
 
 \medskip
 
-\cvsection{Parcours professionnel}
+\cvfr{\cvsection{Parcours professionnel}}\cven{\cvsection{Professional background}}
 
-\cvevent{Projet de fin d’études (stage de 6 mois)}{Université Grenoble Alpes}{21 Février 2022 -- 22 Juillet 2022}{Saint Martin d'Hères, France}
-Sujet de stage: «Discoverability des micro-gestes en Réalité Augmentée». Publication \cite{lambert_visual_2023} écrite pendant la thèse sur les expériences menées lors de ce stage.
+\cvfr{\cvevent{Projet de fin d’études (stage de 6 mois)}{Université Grenoble Alpes}{21 Février 2022 -- 22 Juillet 2022}{Saint Martin d'Hères, France}}
+\cven{\cvevent{End-of-studies project (6-month internship)}{Université Grenoble Alpes}{21 Feb 2022 -- 22 July 2022}{Saint Martin d'Hères, France}}
+
+\cvfr{Sujet de stage: «Discoverability des micro-gestes en Réalité Augmentée». Publication \cite{lambert_visual_2023} écrite pendant la thèse sur les expériences menées lors de ce stage.
 \begin{itemize}
-  \item Images 2D (\tech{Gimp}, \tech{Inkscape}), modélisation 3D (\tech{Blender}), application en Réalité Augmentée (\tech{Unity}), site statique (\tech{HTML}, \tech{CSS}, \tech{JavaScript})
-\end{itemize}
+  \item Images 2D (\tech{Gimp}, \tech{Inkscape}), modélisation 3D (\tech{Blender}), application en Réalité Augmentée (\tech{Unity}), site statique (\tech{HTML/CSS/JavaScript})
+\end{itemize}}
+\cven{Internship topic: "Discoverability of micro-gestures in Augmented Reality".
+\begin{itemize}
+  \item 2D images (\tech{Gimp}, \tech{Inkscape}), 3D modeling (\tech{Blender}), Augmented Reality application (\tech{Unity}), static website (\tech{HTML/CSS/JavaScript})
+\end{itemize}}
 
 \divider
 
-\cvevent{Stage Assistant Ingénieur (2-3 mois)}{Metrologic Group}{25 Mai 2021 -- 06 Août 2021}{Meylan, France}
-Sujet de stage: «Portabilité Windows-Linux». Conversion automatique des solutions \tech{Visual Studio} en projets \tech{CMake} (fait en \tech{Python}).
+\cvfr{\cvevent{Stage Assistant Ingénieur (2-3 mois)}{Metrologic Group}{25 Mai 2021 -- 06 Août 2021}{Meylan, France}}
+\cven{\cvevent{Engineer's Assistant Internship (2-3 months)}{Metrologic Group}{25 Mai 2021 -- 06 Août 2021}{Meylan, France}}
+
+\cvfr{Sujet de stage: «Portabilité Windows-Linux». Conversion automatique des solutions \tech{Visual Studio} en projets \tech{CMake} (fait en \tech{Python}).}
+\cven{Internship subject: "Windows-Linux portability". Automatic conversion of \tech{Visual Studio} solutions into \tech{CMake} projects (done with \tech{Python}).}
 
 % \cvsection{A Day of My Life}
 
@@ -232,88 +263,124 @@ Sujet de stage: «Portabilité Windows-Linux». Conversion automatique des solut
 
 \medskip
 
-\cvsection{Enseignement}
+\cvfr{\cvsection{Enseignement}}\cven{\cvsection{Teachings}}
 
-\cvevent{R212 Intégration}{IUT 1 Grenoble - L1}{A venir}{}
-Suivi de TP et d'examen (20 heqTD).
+\cvfr{\cvevent{R212 Intégration}{IUT 1 Grenoble - L1}{A venir...}{}}
+\cven{\cvevent{R212 Integration}{IUT 1 Grenoble - L1}{To come...}{}}
 
-\divider
-
-\cvevent{R111 Intégration}{IUT 1 Grenoble - L1}{08 Octobre 2024 -- 03 Décembre 2024}{}
-Suivi de TP et d'examen (22 heqTD).
+\cvfr{Suivi de TP et d'examen sur des bases d'\tech{HTML/CSS/JavaScript} (20 heqTD).}
+\cven{TP follow-up and exam on \tech{HTML/CSS/JavaScript} basics (20 heqTD).}
 
 \divider
 
-\cvevent{Interaction multimodale et sur supports mobiles}{Polytech Grenoble - M2}{13 Septembre 2022 -- 15 Novembre 2022}{}
-Cours, suivi de projet et soutenances (41 heqTD).
+\cvfr{\cvevent{R111 Intégration}{IUT 1 Grenoble - L1}{08 Octobre 2024 -- 03 Décembre 2024}{}}
+\cven{\cvevent{R111 Integration}{IUT 1 Grenoble - L1}{08 Oct 2024 -- 03 Dec 2024}{}}
+
+\cvfr{Suivi de TP et d'examen sur des bases d'\tech{HTML/CSS} (22 heqTD).}
+\cven{TP follow-up and exam on \tech{HTML/CSS} basics (22 heqTD).}
 
 \divider
 
-\cvevent{Cours Experience Utilisateur (UX)}{Université Grenoble Alpes - M2}{28 Septembre 2022 -- 07 Décembre 2022}{}
-Suivi de projet (16,5 heqTD).
+\cvfr{\cvevent{Interaction multimodale et sur supports mobiles}{Polytech Grenoble - M2}{13 Septembre 2022 -- 15 Novembre 2022}{}}
+\cven{\cvevent{Multimodal interaction and mobile devices}{Polytech Grenoble - M2}{13 Sept 2022 -- 15 Nov 2022}{}}
+
+\cvfr{Cours, suivi de projet et soutenances (41 heqTD).}
+\cven{Lectures, project follow-up and presentations (41 heqTD).}
 
 \divider
 
-\cvevent{Interaction multimodale et sur supports mobiles}{Polytech Grenoble - M2}{14 Septembre 2022 -- 16 Novembre 2022}{}
-Suivi de projet et soutenances (31 heqTD).
+\cvfr{\cvevent{Cours Experience Utilisateur (UX)}{Université Grenoble Alpes - M2}{28 Septembre 2022 -- 07 Décembre 2022}{}}
+\cven{\cvevent{User Experience (UX) course}{Université Grenoble Alpes - M2}{28 Sept 2022 -- 07 Dec 2022}{}}
+
+\cvfr{Suivi de projet (16,5 heqTD).}
+\cven{Project follow-up (16,5 heqTD).}
 
 \divider
 
-\cvevent{Cours Experience Utilisateur (UX)}{Université Grenoble Alpes - M2}{28 Septembre 2022 -- 07 Décembre 2022}{}
-Suivi de projet (16,5 heqTD) et examen de 1h (rédaction de sujet et correction).
+\cvfr{\cvevent{Interaction multimodale et sur supports mobiles}{Polytech Grenoble - M2}{14 Septembre 2022 -- 16 Novembre 2022}{}}
+\cven{\cvevent{Multimodal interaction and mobile devices}{Polytech Grenoble - M2}{14 Sept 2022 -- 16 Nov 2022}{}}
+
+\cvfr{Suivi de projet et soutenances (31 heqTD).}
+\cven{Project follow-up and presentations (31 heqTD).}
+
+\divider
+
+\cvfr{\cvevent{Cours Experience Utilisateur (UX)}{Université Grenoble Alpes - M2}{28 Septembre 2022 -- 07 Décembre 2022}{}}
+\cven{\cvevent{User Experience (UX) course}{Université Grenoble Alpes - M2}{28 Sept 2022 -- 07 Dec 2022}{}}
+
+\cvfr{Suivi de projet (16,5 heqTD) et examen de 1h (rédaction de sujet et correction).}
+\cven{Project follow-up (16,5 heqTD) and 1h exam (writing and correction).}
 
 \medskip
 
-\cvsection{Publications}
+\cvfr{\cvsection{Publications}}\cven{\cvsection{Publications}}
 
 %% Specify your last name(s) and first name(s) as given in the .bib to automatically bold your own name in the publications list.
 %% One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly; or write \bibnamedelimi if you use initials in the .bib
 %% You can specify multiple names, especially if you have changed your name or if you need to highlight multiple authors.
-\mynames{Lim/Lian\bibnamedelima Tze,
-  Wong/Lian\bibnamedelima Tze,
-  Lim/Tracy,
-  Lim/L.\bibnamedelimi T.}
+\mynames{Vincent\bibnamedelima L.,
+  V.\bibnamedelima Lambert,
+  Vincent\bibnamedelimi L.}
 %% MAKE SURE THERE IS NO SPACE AFTER THE FINAL NAME IN YOUR \mynames LIST
 
 \nocite{*}
 
-\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+% \cvfr{\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Livres}},type=book]}
+% \cven{\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]}
+
+% \divider
+
+\cvfr{\printbibliography[heading=pubtype,title={\printinfo{\faFile[regular]}{ Articles de Journal}},type=article]}
+\cven{\printbibliography[heading=pubtype,title={\printinfo{\faFile[regular]}{ Journal Articles}},type=article]}
+
 
 \divider
 
-\printbibliography[heading=pubtype,title={\printinfo{\faFile[regular]}{ Articles de Journal}},type=article]
-
-\divider
-
-\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{ Conference Proceedings}},type=inproceedings]
+\cvfr{\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{ Conference Proceedings}},type=inproceedings]}
+\cven{\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{ Conference Proceedings}},type=inproceedings]}
 
 \medskip
 
-\cvsection{Projets personnels majeurs}
+\cvfr{\cvsection{Projets personnels majeurs}}\cven{\cvsection{Major personal projects}}
 
-\cvevent{Créateur des règles, de l'univers et des outils}{Jeu de rôle papier}{Août 2015 -- en cours}{}
-Création d’un jeu de rôle papier avec système de règles, lore, bêta-tests et quêtes (fichiers compilés avec \tech{LuaLaTeX} et une base de données \tech{MariaDB}). Création d’une langue avec
+\cvfr{\cvevent{Créateur des règles, de l'univers et des outils}{Jeu de rôle papier}{Août 2015 -- En cours}{}}
+\cven{\cvevent{Rules, lore and tools creator}{Tabletop role-playing game}{Aug 2015 -- Ongoing}{}}
+
+\cvfr{Création d’un jeu de rôle papier avec système de règles, lore, bêta-tests et quêtes (fichiers compilés avec \tech{LuaLaTeX} et une base de données \tech{MariaDB}). Création d’une langue avec
 grammaire, vocabulaire, système d’écriture et donc fonte pour les fichiers numériques associés. Réalisation d’une
-interface graphique avec \tech{JavaFx} pour l’exploration du jeu, une modification aisée de ses variables et pour la création assistée de personnages.
+interface graphique avec \tech{JavaFx} pour l’exploration du jeu, une modification aisée de ses variables et pour la création assistée de personnages.}
+\cven{Creation of a tabletop role-playing game with rules system, lore, beta-tests and quests (files compiled with \tech{LuaLaTeX} and a \tech{MariaDB} database). Creation of a language with grammar, vocabulary, writing system and thus font for the associated digital files. Realization of a graphical interface with \tech{JavaFx} for game exploration, easy modification of its variables and for the assisted creation of characters.}
 
 \divider
 
-\cvevent{Game designer, scénariste et aspects techniques}{Modification de jeux existants (hack-rom)}{Janvier 2014 -- Août 2017}{}
-Création de multiples hack-roms (jeux modifiés) basés sur l’univers de Pokémon.
+\cvfr{\cvevent{Game designer, scénariste et aspects techniques}{Modification de jeux existants (hack-rom)}{Janvier 2014 -- Août 2017}{}}
+\cven{\cvevent{Game designer, writer and technical aspects}{Modification of existing games (hack-rom)}{Jan 2014 -- Aug 2017}{}}
+
+\cvfr{Création de multiples hack-roms (jeux modifiés) basés sur l’univers de Pokémon.}
+\cven{Creation of multiple hack-roms (modified games) based on the Pokémon universe.}
 
 \medskip
 
-\cvsection{Autres intérêts}
+\cvfr{\cvsection{Autres intérêts}}\cven{\cvsection{Other interests}}
 
 % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
 % \wheelchart{outer radius}{inner radius}{
 % comma-separated list of value/text width/color/detail}
+\cvfr{
 \wheelchart{1.5cm}{0.5cm}{%
-  6/8em/accent!30/Jeu de rôle,
-  3/8em/accent!40/Handball,
-  8/8em/accent!60/{Jeu-vidéo,\\e-sport},
-  2/10em/accent/Cuisine vegan,
-  5/6em/accent!20/Manga
+6/8em/accent!30/Jeu de rôle,
+3/8em/accent!40/Handball,
+8/8em/accent!60/{Jeux-vidéo,\\e-sport},
+2/10em/accent/Cuisine vegan,
+5/6em/accent!20/Manga}
+}
+\cven{
+\wheelchart{1.5cm}{0.5cm}{%
+6/8em/accent!30/Tabletop role-playing,
+3/8em/accent!40/Handball,
+8/8em/accent!60/{Video-games,\\e-sport},
+2/10em/accent/Vegan cooking,
+5/6em/accent!20/Manga}
 }
 
 \medskip
@@ -328,17 +395,20 @@ Création de multiples hack-roms (jeux modifiés) basés sur l’univers de Pok�
 % ``Something smart or heartfelt, preferably in one sentence.''
 % \end{quote}
 
-\cvsection{Fiertés}
+\cvfr{\cvsection{Fiertés}}\cven{\cvsection{Most proud of}}
 
-\cvachievement{\faTrophy}{Mon Jeu de Rôle}{10 ans de travail pour créer un univers complet et un système de jeu original}
-
-\divider
-
-\cvachievement{\faHeartbeat}{Mes engagements associatifs}{3 associations pendant le covid}
+\cvfr{\cvachievement{\faTrophy}{Mon Jeu de Rôle}{10 ans de travail pour créer un univers complet et un système de jeu original}}
+\cven{\cvachievement{\faTrophy}{My Tabletop RPG}{10 years of work to create a complete universe and an original game system}}
 
 \divider
 
-\cvachievement{\faHeartbeat}{Ma thèse}{manuscrit en cours d'écriture...}
+\cvfr{\cvachievement{\faHeartbeat}{Mes engagements associatifs}{3 associations pendant le covid}}
+\cven{\cvachievement{\faHeartbeat}{My associative commitments}{3 associations during the covid}}
+
+\divider
+
+\cvfr{\cvachievement{\faHeartbeat}{Ma thèse}{manuscrit en cours d'écriture...}}
+\cven{\cvachievement{\faHeartbeat}{My thesis}{manuscript in progress...}}
 
 % \cvsection{En quelques mots}
 
@@ -365,17 +435,21 @@ Création de multiples hack-roms (jeux modifiés) basés sur l’univers de Pok�
 % \cvtag{Manga}
 % \par}
 
-\cvsection{Langues}
+\cvfr{\cvsection{Langues}}
+\cven{\cvsection{Languages}}
 
-\cvskill{Français}{français.png}{Langue maternelle}
+\cvfr{\cvskill{Français}{français.png}{Langue maternelle}}
+\cven{\cvskill{French}{français.png}{Native}}
 \smallskip
 \divider
 
-\cvskill{Anglais}{anglais.png}{C1 (TOEIC) et B2 (First)}
+\cvfr{\cvskill{Anglais}{anglais.png}{C1 (TOEIC) et B2 (First)}}
+\cven{\cvskill{English}{anglais.png}{C1 (TOEIC) and B2 (First)}}
 \smallskip
 \divider
 
-\cvskill{Espagnol}{espagnol.png}{B2 (d’après le CECR)}
+\cvfr{\cvskill{Espagnol}{espagnol.png}{B2 (d’après le CECR)}}
+\cven{\cvskill{Spanish}{espagnol.png}{B2 (according to the CECR)}}
 \smallskip
 \divider
 
@@ -384,85 +458,119 @@ Création de multiples hack-roms (jeux modifiés) basés sur l’univers de Pok�
 %% \bigskip, \vspace etc to make adjustments.
 \medskip
 
-\cvsection{Associations}
+\cvfr{\cvsection{Associations}}
+\cven{\cvsection{Associations}}
 
-\cvlightevent{Association des Faluchards Grenoblois}{Président}{Septembre 2021 -- Septembre 2022}{}
-Gestion d’évènements étudiants (soirées trimestrielles et weekend spécial annuel a \textasciitilde150 personnes), de
-commandes groupées et de partenariats locaux.
+\cvfr{\cvlightevent{Association des Faluchards Grenoblois}{Président}{Septembre 2021 -- Septembre 2022}{}}
+\cven{\cvlightevent{Association des Faluchards Grenoblois}{President}{Sept 2021 -- Sept 2022}{}}
 
-\divider
-
-\cvlightevent{Pôle Communication de l’Ensimag}{Président}{Avril 2020 -- Mai 2021}{}
-
-Écriture pour le journal d’école mensuel et prise de photographies/vidéos.
+\cvfr{Gestion d’évènements étudiants (soirées trimestrielles et weekend spécial annuel a \textasciitilde150 personnes), de
+commandes groupées et de partenariats locaux.}
+\cven{Management of student events (quarterly parties and annual special weekend with \textasciitilde150 people), group orders and local partnerships.}
 
 \divider
 
-\cvlightevent{Bureau des Arts (BDA) de l’Ensimag}{Vice-trésorier}{Avril 2020 -- Mai 2021}{}
+\cvfr{\cvlightevent{Pôle Communication de l’Ensimag}{Président}{Avril 2020 -- Mai 2021}{}}
+\cven{\cvlightevent{Pôle Communication de l’Ensimag}{President}{April 2020 -- May 2021}{}}
 
-Budgets prévisionnel de l’année (Solde de trésorerie \textasciitilde4500€). Organisation de deux soirées Quiz en distanciel (\textasciitilde60
-personnes sur Discord pendant 4h).
-
-\divider
-
-\cvlightevent{Ensimagaming}{Reponsable communication}{Mai 2020 -- Décembre 2020}{}
-
-Gestion en binôme de la communication. Mise en place de la chaine Twitch de l’association. Organisation et
-commentaire de tournoi Rocket League.
+\cvfr{Écriture pour le journal d’école mensuel et prise de photographies/vidéos.}
+\cven{Writing for the monthly school newspaper and taking photographs/videos.}
 
 \divider
 
-\cvlightevent{Puls’Art – Liste BDA Ensimag 2020}{Vice-trésorier}{Octobre 2019 -- Avril 2020}{}
+\cvfr{\cvlightevent{Bureau des Arts (BDA) de l’Ensimag}{Vice-trésorier}{Avril 2020 -- Mai 2021}{}}
+\cven{\cvlightevent{Bureau des Arts (BDA) de l’Ensimag}{Vice-treasurer}{April 2020 -- May 2021}{}}
 
-Budgets prévisionnel de la semaine d’évènements culturels (Total \textasciitilde8000€).
+\cvfr{Budgets prévisionnel de l’année (Solde de trésorerie \textasciitilde4500€). Organisation de deux soirées Quiz en distanciel (\textasciitilde60 personnes sur Discord pendant 4h).}
+\cven{Budget estimates for the year (Cash balance \textasciitilde4500€). Organization of two Quiz evenings remotely (\textasciitilde60 people on Discord for 4 hours).}
+
+\divider
+
+\cvfr{\cvlightevent{Ensimagaming}{Reponsable communication}{Mai 2020 -- Décembre 2020}{}}
+\cven{\cvlightevent{Ensimagaming}{Communication manager}{May 2020 -- Dec 2020}{}}
+
+\cvfr{Gestion en binôme de la communication. Mise en place de la chaine Twitch de l’association. Organisation et commentaire de tournoi Rocket League.}
+\cven{Communication management in pairs. Setting up the association's Twitch channel. Organization and commentary of Rocket League tournaments.}
+
+\divider
+
+\cvfr{\cvlightevent{Puls’Art – Liste BDA Ensimag 2020}{Vice-trésorier}{Octobre 2019 -- Avril 2020}{}}
+\cven{\cvlightevent{Puls’Art – Liste BDA Ensimag 2020}{Vice-treasurer}{Oct 2019 -- April 2020}{}}
+
+\cvfr{Budgets prévisionnel de la semaine d’évènements culturels (Total \textasciitilde8000€).}
+\cven{Budget estimates for the week of cultural events (Total \textasciitilde8000€).}
 
 \medskip
 
-\cvsection{Encadrement}
+\cvfr{\cvsection{Encadrement}}
+\cven{\cvsection{Supervision}}
 
-\cvsmallevent{Jad	Berjawi (M1)}{}{12 Février 2024  --	 23 Août 2024}{}
-Sujet de stage: « Develop a Unity AR plugin for hand microgestures ».
+\cvfr{\cvsmallevent{Jad	Berjawi (M1)}{}{12 Février 2024  --	 23 Août 2024}{}}
+\cven{\cvsmallevent{Jad	Berjawi (M1)}{}{12 Feb 2024  --	 23 Aug 2024}{}}
+
+\cvfr{Sujet de stage: « Develop a Unity AR plugin for hand microgestures ».}
+\cven{Internship topic: « Develop a Unity AR plugin for hand microgestures ».}
 
 \divider
 
-\cvsmallevent{Raphaël Demoulin (L3)}{}{30 Mai 2023  -- 28 Juillet 2023}{}
-Sujet de stage: « Programmation d'une API pour la représentation de
-microgestes de la main ».
+\cvfr{\cvsmallevent{Raphaël Demoulin (L3)}{}{30 Mai 2023  -- 28 Juillet 2023}{}}
+\cven{\cvsmallevent{Raphaël Demoulin (L3)}{}{30 May 2023  -- 28 July 2023}{}}
+
+\cvfr{Sujet de stage: « Programmation d'une API pour la représentation de microgestes de la main ».}
+\cven{Internship topic: « Programming an API for the representation of hand microgestures ».}
 
 \medskip
 
-\cvsection{Autres expériences}
+\cvfr{\cvsection{Autres expériences}}
+\cven{\cvsection{Other experiences}}
 
-\cvsmallevent{}{Séminaire LOKI}{3 juin 2024 -- 5 juin 2024}{Lille, France et Hastière, Belgique}
-3 jours de présentations et discussions sur les travaux de recherche de l'équipe LOKI.
+\cvfr{\cvsmallevent{}{Séminaire LOKI}{3 Juin 2024 -- 5 Juin 2024}{Lille, France et Hastière, Belgique}}
+\cven{\cvsmallevent{}{LOKI Seminar}{3 June 2024 -- 5 June 2024}{Lille, France and Hastière, Belgium}}
 
-\divider
-
-\cvsmallevent{}{PHD LIG Madness}{21 Mai 2024}{Saint Martin d'Hères, France}
-Présentation de ma thèse en 2 minutes. Récompensé avec 2 autres doctorants.
-
-\divider
-
-\cvsmallevent{}{eNSEMBLE Autumn School}{05 Octobre 2023 -- 07 Octobre 2023}{Saint Martin d'Hères, France}
-Trois jours de formations en Interaction Humain-Machine avec des pairs venant d’universités françaises (\textasciitilde20h).
+\cvfr{3 jours de présentations et discussions sur les travaux de recherche de l'équipe LOKI.}
+\cven{3 days of presentations and discussions on the research work of the LOKI team.}
 
 \divider
 
-\cvsmallevent{}{Etudiant volontaire IHM 2023}{04 Avril 2023 –- 08 Avril 2023}{Troyes, France}
-Gestion technique du comité de programme (\textasciitilde7h).
-Gestion du micro, logistique à l’UTT et logistique du gala (\textasciitilde15h).
+\cvfr{\cvsmallevent{}{PHD LIG Madness}{21 Mai 2024}{Saint Martin d'Hères, France}}
+\cven{\cvsmallevent{}{PHD LIG Madness}{21 May 2024}{Saint Martin d'Hères, France}}
+
+\cvfr{Présentation de ma thèse en 2 minutes. Récompensé avec 2 autres doctorants.}
+\cven{2-minute presentation of my thesis. Awarded with 2 other PhD students.}
+
+\divider
+
+\cvfr{\cvsmallevent{}{eNSEMBLE Autumn School}{05 Octobre 2023 -- 07 Octobre 2023}{Saint Martin d'Hères, France}}
+\cven{\cvsmallevent{}{eNSEMBLE Autumn School}{05 Oct 2023 -- 07 Oct 2023}{Saint Martin d'Hères, France}}
+
+\cvfr{Trois jours de formations en Interaction Humain-Machine avec des pairs venant d’universités françaises (\textasciitilde20h).}
+\cven{Three days of training in Human-Computer Interaction with peers from French universities (\textasciitilde20h).}
+
+\divider
+
+\cvfr{\cvsmallevent{}{Etudiant volontaire IHM 2023}{04 Avril 2023 –- 08 Avril 2023}{Troyes, France}}
+\cven{\cvsmallevent{}{IHM 2023 Student Volunteer}{04 Apr 2023 –- 08 Apr 2023}{Troyes, France}}
+
+\cvfr{Gestion technique du comité de programme (\textasciitilde7h). Gestion du micro, logistique à l’UTT et logistique du gala (\textasciitilde15h).}
+\cven{Technical management of the program committee (\textasciitilde7h). Microphone management, logistics at UTT and gala logistics (\textasciitilde15h).}
 
 
 \newpage
 
-\cvsmallevent{}{Formation SAFE}{24 Février 2022}{En ligne}
-Formation au soutien face aux agressions sexistes et sexuelles (VSS). Vidéos, discussions et questionnaire incluant des aspects statistiques, sociologiques, psychologiques et juridiques (\textasciitilde5h au total). Sensibilisation à l'accompagnement des victimes et auteur·rice·s de VSS.
+\cvfr{\cvsmallevent{}{Formation SAFE}{24 Février 2022}{En ligne}}
+\cven{\cvsmallevent{}{SAFE Training}{24 Feb 2022}{Online}}
+
+\cvfr{Formation et sensibilisation aux agressions sexistes et sexuelles (VSS). Vidéos, discussions et questionnaire incluant des aspects statistiques, sociologiques, psychologiques et juridiques (\textasciitilde5h au total). Sensibilisation à l'accompagnement des victimes et auteur·rice·s de VSS.}
+\cven{Training and awareness-raising on gender-based violences (GBV). Videos, discussions and questionnaire including statistical, sociological, psychological and legal aspects (\textasciitilde5h in total). Awareness on how to support victims and perpetrators of GBV.}
 
 
 \divider
 
-\cvsmallevent{}{AFIRM CHI Summer School}{22 Août 2022 –- 26 Août 2022}{Padoue, Italie}
-Formations à l’Interaction Humain-Machine avec des pairs (\textasciitilde25h).
+\cvfr{\cvsmallevent{}{AFIRM CHI Summer School}{22 Août 2022 –- 26 Août 2022}{Padoue, Italie}}
+\cven{\cvsmallevent{}{AFIRM CHI Summer School}{22 Aug 2022 –- 26 Aug 2022}{Padua, Italy}}
+
+\cvfr{Formations à l’Interaction Humain-Machine avec des pairs (\textasciitilde25h).}
+\cven{Courses on Human-Computer Interaction with peers (\textasciitilde25h).}
 
 
 % \divider
