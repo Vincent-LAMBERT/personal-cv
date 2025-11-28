@@ -131,7 +131,7 @@
 
 \setlength{\parindent}{0pt}
 \newcommand{\divider}{
-\vspace{-0.2cm}
+% \vspace{-0.2cm}
 \textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip
 }
 
